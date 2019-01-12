@@ -1,6 +1,4 @@
 Table of Contents
-=================
-
       * [git使用教程](#git使用教程)
          * [git起步](#git起步)
             * [git安装](#git安装)
@@ -16,6 +14,7 @@ Table of Contents
             * [远程仓库](#远程仓库)
             * [git 别名](#git-别名)
          * [git分支](#git分支)
+
 
 ## git使用教程
 [git教程地址](https://git-scm.com/book/zh/v2)
