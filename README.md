@@ -129,9 +129,48 @@ $ git remote rm paul
 $ git config --global alias.co checkout
 ```
 ### git分支
-
-
-
+```shell
+# 创建分支（命令仅仅 创建 一个新分支，并不会自动切换到新分支中去） 
+$ git branch testing
+# 查看各个分支当前所指的对象。 提供这一功能的参数是 --decorate
+$ git log --oneline --decorate
+# 分支切换
+$ git checkout testing
+# 新建一个分支并同时切换到那个分支上， 使用-b 参数
+$ git checkout -b iss53
+# 合并分支
+$ git merge hotfix
+# 删除分支（可以使用 -D 选项强制删除它）
+$ git branch -d hotfix
+# 查看分支列表，分支前的 * 字符：它代表现在检出的那一个分支（也就是说，当前 HEAD 指针所指向的分支）
+$ git branch
+# --merged 与 --no-merged 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支。 如果要查看哪些分支已经合并到当前分支
+$ git branch --merged
+$ git branch --no-merged
+```
+#### git远程分支
+```shell
+# 显式地获得远程引用的完整列表或者git remote show (branch)
+$ git ls-remote 
+# 拉取 同步工作
+$ git fetch origin
+# pull获取数据，在大多数情况下它的含义是一个 git fetch 紧接着一个 git merge 命令
+$ git pull
+# 推送到远程
+$ git push (remote) (branch)
+# 推送本地的 serverfix 分支来更新远程仓库上的 serverfix 分支。
+$ git push origin serverfix:serverfix
+# 将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。
+$ git push origin serverfix:awesomebranch 
+# 合并到当前所在的分支
+$ git merge origin/serverfix
+# 如果想要在自己的 serverfix 分支上工作，可以将其建立在远程跟踪分支之上
+$ git checkout -b serverfix origin/serverfix
+# 跟踪分支
+$ git checkout -b [branch] [remotename]/[branch]
+# 删除远程分支
+$ git push origin --delete serverfix
+```
 
 
 
